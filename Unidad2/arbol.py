@@ -20,11 +20,11 @@ for i in lista:
 
     root.append(alumno) #Lo añadimos a la raiz
 
-#print(ET.tostring(root))
-#str = minidom.parseString(ET.tostring(root)).toprettyxml(indent = "\t")
-#f = open("alumnos.xml", "a")
-#f.write(str)
-#f.close()
+print(ET.tostring(root))
+str = minidom.parseString(ET.tostring(root)).toprettyxml(indent = "\t")
+f = open("alumnos.xml", "a")
+f.write(str)
+f.close()
 
 f = open("alumnos.xml")
 raiz = ET.parse("alumnos.xml").getroot()
