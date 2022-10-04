@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<deportistas>
+	<deportista id="1">
+		<nombre>A Dijiang</nombre>
+		<sexo>M</sexo>
+		<altura>180</altura>
+		<peso>80</peso>
+		<participaciones/>
+	</deportista>
+</deportistas>
