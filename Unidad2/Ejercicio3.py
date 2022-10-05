@@ -62,7 +62,79 @@ def crearXMLdeportistas():
     for campo in listaDeportistas:
 
         if idActual == int(campo[0]):
-            pass
+            root.append(deportista)
+
+            idActual = campo[0]
+
+            deportista = ET.Element("deportista")
+            deportista.set("id", campo[0])
+
+            nombre = ET.Element("nombre")
+            nombre.text = campo[1]
+
+            sexo = ET.Element("sexo")
+            sexo.text = campo[2]
+
+            altura = ET.Element("altura")
+            altura.text = campo[4]
+
+            peso = ET.Element("peso")
+            peso.text = campo[5]
+
+            deportista.append(nombre)
+            deportista.append(sexo)
+            deportista.append(altura)
+            deportista.append(peso)
+
+            participaciones = ET.Element("participaciones")
+
+            if deporteActual == campo[12]:
+                participacion = ET.Element("participacion")
+                participacion.set("edad", campo[3])
+
+                equipo = ET.Element("equipo", abbr=campo[7])
+                equipo.text = campo[6]
+
+                juegos = ET.Element("juegos")
+                juegos.text = (campo[8] + "" + campo[11])
+
+                evento = ET.Element("evento")
+                evento.text = campo[13]
+
+                medalla = ET.Element("medalla")
+                medalla.text = campo[14]
+
+                participacion.append(equipo)
+                participacion.append(juegos)
+                participacion.append(evento)
+                participacion.append(medalla)
+
+                deporte.append(participacion)
+            else:
+                deporte = ET.Element("deporte")
+                deporte.text = campo[12]
+
+                participacion = ET.Element("participacion")
+                participacion.set("edad", campo[3])
+
+                equipo = ET.Element("equipo", abbr=campo[7])
+                equipo.text = campo[6]
+
+                juegos = ET.Element("juegos")
+                juegos.text = (campo[8] + "" + campo[11])
+
+                evento = ET.Element("evento")
+                evento.text = campo[13]
+
+                medalla = ET.Element("medalla")
+                medalla.text = campo[14]
+
+                participacion.append(equipo)
+                participacion.append(juegos)
+                participacion.append(evento)
+                participacion.append(medalla)
+
+                deporte.append(participacion)
         else:
 
 
