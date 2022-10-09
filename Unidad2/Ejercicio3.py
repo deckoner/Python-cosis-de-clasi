@@ -1,5 +1,5 @@
 import csv
-from csv import Dialect
+import xml.sax
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
 
@@ -55,13 +55,39 @@ def crearXMLdeportistas():
 
     root = ET.Element("deportistas")
 
-    idActual = 1
-    deporteActual = ""
-    primeraVez = True
+    idActual = listaDeportistas[0][0]
+    deporteActual = listaDeportistas[0][12]
+
+    #Metemos parte de la primera lectura a mano para no controlarlo en el bucle
+    deportista = ET.Element("deportista")
+    deportista.set("id", listaDeportistas[0][0])
+
+    nombre = ET.Element("nombre")
+    nombre.text = listaDeportistas[0][1]
+
+    sexo = ET.Element("sexo")
+    sexo.text = listaDeportistas[0][2]
+
+    altura = ET.Element("altura")
+    altura.text = listaDeportistas[0][4]
+
+    peso = ET.Element("peso")
+    peso.text = listaDeportistas[0][5]
+
+    deportista.append(nombre)
+    deportista.append(sexo)
+    deportista.append(altura)
+    deportista.append(peso)
+
+    participaciones = ET.Element("participaciones")
+
+    deporte = ET.Element("deporte")
+    deporte.set("nombre", listaDeportistas[0][12])
 
     for campo in listaDeportistas:
-
-        if idActual == int(campo[0]):
+        if not idActual == campo[0]:
+            participaciones.append(deporte)
+            deportista.append(participaciones)
             root.append(deportista)
 
             idActual = campo[0]
@@ -88,167 +114,45 @@ def crearXMLdeportistas():
 
             participaciones = ET.Element("participaciones")
 
-            if deporteActual == campo[12]:
-                participacion = ET.Element("participacion")
-                participacion.set("edad", campo[3])
+        if not deporteActual == campo[12]:
+            participaciones.append(deporte)
 
-                equipo = ET.Element("equipo", abbr=campo[7])
-                equipo.text = campo[6]
+            deporteActual = campo[12]
 
-                juegos = ET.Element("juegos")
-                juegos.text = (campo[8] + "" + campo[11])
+            deporte = ET.Element("deporte")
+            deporte.set("nombre", campo[12])
 
-                evento = ET.Element("evento")
-                evento.text = campo[13]
+        participacion = ET.Element("participacion")
+        participacion.set("edad", campo[3])
 
-                medalla = ET.Element("medalla")
-                medalla.text = campo[14]
+        equipo = ET.Element("equipo", abbr=campo[7])
+        equipo.text = campo[6]
 
-                participacion.append(equipo)
-                participacion.append(juegos)
-                participacion.append(evento)
-                participacion.append(medalla)
+        juegos = ET.Element("juegos")
+        juegos.text = (campo[8] + "" + campo[11])
 
-                deporte.append(participacion)
-            else:
-                deporte = ET.Element("deporte")
-                deporte.text = campo[12]
+        evento = ET.Element("evento")
+        evento.text = campo[13]
 
-                participacion = ET.Element("participacion")
-                participacion.set("edad", campo[3])
+        medalla = ET.Element("medalla")
+        medalla.text = campo[14]
 
-                equipo = ET.Element("equipo", abbr=campo[7])
-                equipo.text = campo[6]
+        participacion.append(equipo)
+        participacion.append(juegos)
+        participacion.append(evento)
+        participacion.append(medalla)
 
-                juegos = ET.Element("juegos")
-                juegos.text = (campo[8] + "" + campo[11])
-
-                evento = ET.Element("evento")
-                evento.text = campo[13]
-
-                medalla = ET.Element("medalla")
-                medalla.text = campo[14]
-
-                participacion.append(equipo)
-                participacion.append(juegos)
-                participacion.append(evento)
-                participacion.append(medalla)
-
-                deporte.append(participacion)
-        else:
-
-
-
-        if idActual == int(campo[0]):
-            root.append(deportista)
-
-            idActual = campo[0]
-
-            deportista = ET.Element("deportista")
-            deportista.set("id", campo[0])
-
-            nombre = ET.Element("nombre")
-            nombre.text = campo[1]
-
-            sexo = ET.Element("sexo")
-            sexo.text = campo[2]
-
-            altura = ET.Element("altura")
-            altura.text = campo[4]
-
-            peso = ET.Element("peso")
-            peso.text = campo[5]
-
-            deportista.append(nombre)
-            deportista.append(sexo)
-            deportista.append(altura)
-            deportista.append(peso)
-
-            participaciones = ET.Element("participaciones")
-
-            if deporteActual == campo[12]:
-                participacion = ET.Element("participacion")
-                participacion.set("edad", campo[3])
-
-                equipo = ET.Element("equipo", abbr=campo[7])
-                equipo.text = campo[6]
-
-                juegos = ET.Element("juegos")
-                juegos.text = (campo[8] + "" + campo[11])
-
-                evento = ET.Element("evento")
-                evento.text = campo[13]
-
-                medalla = ET.Element("medalla")
-                medalla.text = campo[14]
-
-                participacion.append(equipo)
-                participacion.append(juegos)
-                participacion.append(evento)
-                participacion.append(medalla)
-
-                deporte.append(participacion)
-
-                deporte = ET.Element("deporte")
-                peso.text = campo[12]
-
-            else:
-                deporte = ET.Element("deporte")
-                deporte.text = campo[12]
-
-                participacion = ET.Element("participacion")
-                participacion.set("edad", campo[3])
-
-                equipo = ET.Element("equipo", abbr=campo[7])
-                equipo.text = campo[6]
-
-                juegos = ET.Element("juegos")
-                juegos.text = (campo[8] + "" + campo[11])
-
-                evento = ET.Element("evento")
-                evento.text = campo[13]
-
-                medalla = ET.Element("medalla")
-                medalla.text = campo[14]
-
-                participacion.append(equipo)
-                participacion.append(juegos)
-                participacion.append(evento)
-                participacion.append(medalla)
-
-                deporte.append(participacion)
-
-        else:
-            root.append(deportista)
-
-            idActual = campo[0]
-
-            deportista = ET.Element("deportista")
-            deportista.set("id", campo[0])
-
-            nombre = ET.Element("nombre")
-            nombre.text = campo[1]
-
-            sexo = ET.Element("sexo")
-            sexo.text = campo[2]
-
-            altura = ET.Element("altura")
-            altura.text = campo[4]
-
-            peso = ET.Element("peso")
-            peso.text = campo[5]
-
-            deportista.append(nombre)
-            deportista.append(sexo)
-            deportista.append(altura)
-            deportista.append(peso)
-
-            participaciones = ET.Element("participaciones")
+        deporte.append(participacion)
 
     str = minidom.parseString(ET.tostring(root)).toprettyxml(indent="\t")
     f = open("Deportistas.xml", "a")
     f.write(str)
     f.close()
+
+def listarOlimpiadas():
+    pass
+
+
 
 if __name__ == '__main__':
 
@@ -272,7 +176,7 @@ if __name__ == '__main__':
             crearXMLdeportistas()
 
         if opcion == 3:
-            pass
+            listarOlimpiadas()
 
         if opcion == 0:
             finalizar = False

@@ -5,6 +5,541 @@
 		<sexo>M</sexo>
 		<altura>180</altura>
 		<peso>80</peso>
-		<participaciones/>
+		<participaciones>
+			<deporte nombre="Basketball">
+				<participacion edad="24">
+					<equipo abbr="CHN">China</equipo>
+					<juegos>1992 SummerBarcelona</juegos>
+					<evento>Basketball Men's Basketball</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
+	</deportista>
+	<deportista id="2">
+		<nombre>A Lamusi</nombre>
+		<sexo>M</sexo>
+		<altura>170</altura>
+		<peso>60</peso>
+		<participaciones>
+			<deporte nombre="Basketball">
+				<participacion edad="24">
+					<equipo abbr="CHN">China</equipo>
+					<juegos>1992 SummerBarcelona</juegos>
+					<evento>Basketball Men's Basketball</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+			<deporte nombre="Judo">
+				<participacion edad="23">
+					<equipo abbr="CHN">China</equipo>
+					<juegos>2012 SummerLondon</juegos>
+					<evento>Judo Men's Extra-Lightweight</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
+	</deportista>
+	<deportista id="3">
+		<nombre>Gunnar Nielsen Aaby</nombre>
+		<sexo>M</sexo>
+		<altura>NA</altura>
+		<peso>NA</peso>
+		<participaciones>
+			<deporte nombre="Judo">
+				<participacion edad="23">
+					<equipo abbr="CHN">China</equipo>
+					<juegos>2012 SummerLondon</juegos>
+					<evento>Judo Men's Extra-Lightweight</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+			<deporte nombre="Football">
+				<participacion edad="24">
+					<equipo abbr="DEN">Denmark</equipo>
+					<juegos>1920 SummerAntwerpen</juegos>
+					<evento>Football Men's Football</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
+	</deportista>
+	<deportista id="4">
+		<nombre>Edgar Lindenau Aabye</nombre>
+		<sexo>M</sexo>
+		<altura>NA</altura>
+		<peso>NA</peso>
+		<participaciones>
+			<deporte nombre="Football">
+				<participacion edad="24">
+					<equipo abbr="DEN">Denmark</equipo>
+					<juegos>1920 SummerAntwerpen</juegos>
+					<evento>Football Men's Football</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+			<deporte nombre="Tug-Of-War">
+				<participacion edad="34">
+					<equipo abbr="DEN">Denmark/Sweden</equipo>
+					<juegos>1900 SummerParis</juegos>
+					<evento>Tug-Of-War Men's Tug-Of-War</evento>
+					<medalla>Gold</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
+	</deportista>
+	<deportista id="5">
+		<nombre>Christine Jacoba Aaftink</nombre>
+		<sexo>F</sexo>
+		<altura>185</altura>
+		<peso>82</peso>
+		<participaciones>
+			<deporte nombre="Tug-Of-War">
+				<participacion edad="34">
+					<equipo abbr="DEN">Denmark/Sweden</equipo>
+					<juegos>1900 SummerParis</juegos>
+					<evento>Tug-Of-War Men's Tug-Of-War</evento>
+					<medalla>Gold</medalla>
+				</participacion>
+			</deporte>
+			<deporte nombre="Speed Skating">
+				<participacion edad="21">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1988 WinterCalgary</juegos>
+					<evento>Speed Skating Women's 500 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="21">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1988 WinterCalgary</juegos>
+					<evento>Speed Skating Women's 1,000 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="25">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Speed Skating Women's 500 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="25">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Speed Skating Women's 1,000 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="27">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Speed Skating Women's 500 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="27">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Speed Skating Women's 1,000 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
+	</deportista>
+	<deportista id="6">
+		<nombre>Per Knut Aaland</nombre>
+		<sexo>M</sexo>
+		<altura>188</altura>
+		<peso>75</peso>
+		<participaciones>
+			<deporte nombre="Speed Skating">
+				<participacion edad="21">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1988 WinterCalgary</juegos>
+					<evento>Speed Skating Women's 500 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="21">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1988 WinterCalgary</juegos>
+					<evento>Speed Skating Women's 1,000 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="25">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Speed Skating Women's 500 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="25">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Speed Skating Women's 1,000 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="27">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Speed Skating Women's 500 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="27">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Speed Skating Women's 1,000 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+			<deporte nombre="Cross Country Skiing">
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 50 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 30 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 50 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 30 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
+	</deportista>
+	<deportista id="7">
+		<nombre>John Aalberg</nombre>
+		<sexo>M</sexo>
+		<altura>183</altura>
+		<peso>72</peso>
+		<participaciones>
+			<deporte nombre="Cross Country Skiing">
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 50 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 30 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 50 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 30 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
+	</deportista>
+	<deportista id="8">
+		<nombre>Cornelia &quot;Cor&quot; Aalten (-Strannood)</nombre>
+		<sexo>F</sexo>
+		<altura>168</altura>
+		<peso>NA</peso>
+		<participaciones>
+			<deporte nombre="Cross Country Skiing">
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 50 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 30 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 50 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="31">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1992 WinterAlbertville</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 30 kilometres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 10/15 kilometres Pursuit</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="33">
+					<equipo abbr="USA">United States</equipo>
+					<juegos>1994 WinterLillehammer</juegos>
+					<evento>Cross Country Skiing Men's 4 x 10 kilometres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+			<deporte nombre="Athletics">
+				<participacion edad="18">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1932 SummerLos Angeles</juegos>
+					<evento>Athletics Women's 100 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="18">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1932 SummerLos Angeles</juegos>
+					<evento>Athletics Women's 4 x 100 metres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
+	</deportista>
+	<deportista id="9">
+		<nombre>Antti Sami Aalto</nombre>
+		<sexo>M</sexo>
+		<altura>186</altura>
+		<peso>96</peso>
+		<participaciones>
+			<deporte nombre="Athletics">
+				<participacion edad="18">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1932 SummerLos Angeles</juegos>
+					<evento>Athletics Women's 100 metres</evento>
+					<medalla>NA</medalla>
+				</participacion>
+				<participacion edad="18">
+					<equipo abbr="NED">Netherlands</equipo>
+					<juegos>1932 SummerLos Angeles</juegos>
+					<evento>Athletics Women's 4 x 100 metres Relay</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+			<deporte nombre="Ice Hockey">
+				<participacion edad="26">
+					<equipo abbr="FIN">Finland</equipo>
+					<juegos>2002 WinterSalt Lake City</juegos>
+					<evento>Ice Hockey Men's Ice Hockey</evento>
+					<medalla>NA</medalla>
+				</participacion>
+			</deporte>
+		</participaciones>
 	</deportista>
 </deportistas>

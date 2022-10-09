@@ -3,21 +3,6 @@ import csv
 
 class CSVobjeto:
 
-    def mostrarAtletas(self):
-
-        cont = 0
-        Atletas = []
-
-        with open("athlete_events.csv") as csvfile:
-            reader = csv.DictReader(csvfile)
-
-            for row in reader:
-                if not row["Games"] in Atletas:
-                    Atletas.append(row["Games"])
-                    print(row["Games"])
-                    cont += 1
-            print(cont)
-
     def crearCsvOlimpiadas(self):
         olimpiadas = []
 
@@ -60,13 +45,43 @@ class CSVobjeto:
                     if (row["Name"] == nombreAtleta):
                         print("\tAño: " + row["Year"] + ", " + row["Games"] + " de " + row["Season"] + " en " +
                               row["City"] + " participo en " + row["Sport"] + " en el evento" + row["Event"])
+
         if (encontrado == False):
             print("No se se encontro atleta")
 
     def buscardeportistaOlimpiada(self, deporte, year, temporada):
 
+        fase = True
+        encontrado = False
+
         with open("athlete_events.csv") as csvfile:
             reader = csv.DictReader(csvfile)
+            columnas = ["Sport", "Year", "Season", "Games", "City", "Name", "Event", "Medal"]
+
+            for row in reader:
+
+
+
+
+
+                if (fase == True):
+                    if (row["Name"] == nombreAtleta):
+                        encontrado = True
+                        fase = False
+
+                        print(nombreAtleta + " Años: " + row["Age"] + " Genero: " + row["Sex"] + " Altura: " + row[
+                            "Height"] +
+                              " Peso: " + row["Weight"] + " Equipo: " + row["Team"] + " Nacionalidad: " + row["NOC"])
+                        print("Participaciones:")
+                        print("\tAño: " + row["Year"] + ", " + row["Games"] + " de " + row["Season"] + " en " +
+                              row["City"] + " participo en " + row["Sport"] + " en el evento " + row["Event"])
+                else:
+                    if (row["Name"] == nombreAtleta):
+                        print("\tAño: " + row["Year"] + ", " + row["Games"] + " de " + row["Season"] + " en " +
+                              row["City"] + " participo en " + row["Sport"] + " en el evento" + row["Event"])
+
+        if (encontrado == False):
+            print("No se se encontro atleta")
 
 
 c = CSVobjeto()

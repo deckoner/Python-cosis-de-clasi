@@ -6,7 +6,7 @@ class CSV:
         cont = 0
         Atletas = []
 
-        with open("athlete_events.csv") as csvfile:
+        with open("../Unidad2/athlete_events.csv") as csvfile:
             reader = csv.DictReader(csvfile)
 
             for row in reader:
@@ -20,10 +20,10 @@ class CSV:
         olimpiadas = []
         columnas = []
 
-        with open("athlete_events.csv") as csvfile:
+        with open("../Unidad2/athlete_events.csv") as csvfile:
             reader = csv.DictReader(csvfile)
 
-            with open("Olimpiadas.csv", "w") as olimpiadasCSV:
+            with open("../Unidad2/olimpiadas.csv", "w") as olimpiadasCSV:
                 writer = csv.DictWriter(olimpiadasCSV, columnas)
                 writer.writeheader()
                 for row in reader:

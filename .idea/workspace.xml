@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17cdbe19-7e71-40a6-9913-cd5e87b64676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Unidad2/alumnoBinario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/CSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2PruebasYEjemplos/CSV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/Deportistas.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/Ejercicio2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2/Ejercicio2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Unidad2/Ejercicio3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2/Ejercicio3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/alumnoBinario.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2PruebasYEjemplos/alumnoBinario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/alumnos.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2PruebasYEjemplos/alumnos.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/alumnos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2PruebasYEjemplos/alumnos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/arbol.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2PruebasYEjemplos/arbol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/ordenar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2PruebasYEjemplos/ordenar.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +53,7 @@
       <recent name="$PROJECT_DIR$/Unidad2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\repo\Python\Unidad2PruebasYEjemplos" />
       <recent name="D:\repo\Python\Unidad2" />
     </key>
   </component>
@@ -55,7 +65,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="SDK_HOME" value="C:\Users\brian\AppData\Local\Programs\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Unidad2" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
