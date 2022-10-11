@@ -36,7 +36,6 @@ alumno = Alumno("4", "Andoni", "Administracion")
 
 with open("alumnos.pickle", "ab") as f:
     pickle.dump(alumno, f)
-    print()
 
 with open("alumnos.pickle", "rb") as f:
     while True:
