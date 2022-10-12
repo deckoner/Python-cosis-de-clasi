@@ -1,7 +1,24 @@
 import csv
-import xml.sax
+import xml.sax as sax
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
+
+class OlimpiadasHandler(sax.handler.ContentHandler):
+
+    def __init__(self):
+        self.CurrentData = ""
+
+    def startElement(self, tag, atri):
+        self.CurrentData = tag
+        if tag == "olimpiada":
+            print("olimpiada en el año ", atri["year"])
+
+    def endElement(self, tag):
+        self.CurrentData = ""
+
+    def characters(self, content):
+        if self.CurrentData == "juegos":
+            print("\tNombre de los uegos: " + content + "\n")
 
 def crearXMLOlimpiadas():
 
@@ -150,7 +167,8 @@ def crearXMLdeportistas():
     f.close()
 
 def listarOlimpiadas():
-    pass
+    h = OlimpiadasHandler()
+    sax.parse("olimpiadas.xml", h)
 
 
 if __name__ == '__main__':

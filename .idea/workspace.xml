@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17cdbe19-7e71-40a6-9913-cd5e87b64676" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unidad2/Ejercicio4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2/Ejercicio4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unidad2PruebasYEjemplos/alumnoBinario.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2PruebasYEjemplos/alumnoBinario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/Ejercicio2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2/Ejercicio2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2/Ejercicio3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2/Ejercicio3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +105,9 @@
       <updated>1664703326640</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
