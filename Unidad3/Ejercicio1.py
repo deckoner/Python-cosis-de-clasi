@@ -1,9 +1,29 @@
-import mysql.connector
+from Unidad3.OlimpiadasBD import *
+import csv
 
 
-conDB=mysql.connector.connect(host="localhost", user="admin", password="password")
+def crearBaseDatos():
+    # Generamos los diccionarios
+    equipos = {}
+    deportes = []
 
-cur = conDB.cursor()
+    with open("athlete_eventsChiquito.csv") as csvfile:
+        reader = csv.DictReader(csvfile)
 
-with open("alumnos.sql") as f:
-    sql = f.read()
+        for row in reader:
+            if not row["Team"] in equipos:
+                equipos[row["Team"]] = row["NOC"]
+
+            if not row["Sport"] in deportes:
+                deportes.append(row["Sport"])
+
+    # Añadimos los equipos a la base de datos
+    # for e in equipos:
+    #     rellenarEquipo(e, equipos[e])
+
+    for d in deportes:
+        rellenarDeporte(d)
+
+
+if __name__ == '__main__':
+    crearBaseDatos()

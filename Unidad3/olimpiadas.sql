@@ -1,6 +1,6 @@
-DROP SCHEMA IF EXISTS `olimpiadas` ;
-CREATE SCHEMA IF NOT EXISTS `olimpiadas` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
-USE `olimpiadas`;
+DROP SCHEMA IF EXISTS `olimpiadaspy` ;
+CREATE SCHEMA IF NOT EXISTS `olimpiadaspy` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+USE `olimpiadaspy`;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
