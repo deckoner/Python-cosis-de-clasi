@@ -1,17 +1,9 @@
-DROP SCHEMA IF EXISTS `olimpiadaspy` ;
-CREATE SCHEMA IF NOT EXISTS `olimpiadaspy` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
-USE `olimpiadaspy`;
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-
-
 -- ----------------
 -- Tabla `Deporte`
 -- -----------------
 
 CREATE TABLE `Deporte` (
-	`id_deporte` int(11) NOT NULL AUTO_INCREMENT,
+	`id_deporte` INTEGER AUTOINCREMENT,
 	`nombre` varchar(100)  NOT NULL,
 	PRIMARY KEY (`id_deporte`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 DEFAULT CHARACTER SET = latin1 COLLATE = latin1_spanish_ci;
