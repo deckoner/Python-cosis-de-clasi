@@ -24,8 +24,40 @@ def crearEstructuraBaseDatos():
         for r in resultados:
             pass
 
-    except:
+    except Exception as e:
         pass
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
+
+def vaciarInfoScript():
+    # Abrimos la conecxion y creamos un cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    vaciarEquipo = "DELETE FROM Equipo;"
+    vaciarDeporte = "DELETE FROM Deporte;"
+    vaciarDeportista = "DELETE FROM Deportista;"
+    vaciarOlimpiada = "DELETE FROM Olimpiada;"
+    vaciarEvento = "DELETE FROM Evento"
+    vaciarParticipacion = "DELETE FROM Participacion"
+
+    # Ejecutamos las consultas en orden para evitar errore en la base de datos
+    cur.execute(vaciarParticipacion)
+    cur.execute(vaciarEvento)
+    cur.execute(vaciarEquipo)
+    cur.execute(vaciarDeporte)
+    cur.execute(vaciarDeportista)
+    cur.execute(vaciarOlimpiada)
+
+    # Hacemos el comit para guardar los cambios en la base de datos
+    conDB.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
 
 
 # Metodos para rellenar la base de datos
@@ -80,7 +112,7 @@ def rellenarEvento(idEvento, nombre, idOlimpiada, iddeporte):
     conDB = _abrirConecxion()
     cur = conDB.cursor()
 
-    sentencia ="INSERT INTO `olimpiadaspy`.`Evento` (`id_evento`, `nombre`, `id_olimpiada`, `id_deporte`) VALUES ('%s', '%s', '%s', '%s');"
+    sentencia ="INSERT INTO `olimpiadaspy`.`Evento` (`id_evento`, `nombre`, `id_olimpiada`, `id_deporte`) VALUES (%s, %s, %s, %s);"
 
     cur.execute(sentencia, (idEvento, nombre, idOlimpiada, iddeporte))
     conDB.commit()
@@ -112,9 +144,9 @@ def rellenarParticipacion(idDeportista, idEvento, idEquipo, edad, medalla):
     cur = conDB.cursor()
 
     sentencia = "INSERT INTO `olimpiadaspy`.`Participacion` (`id_deportista`, `id_evento`, `id_equipo`, `edad`, " \
-                "`medalla`) VALUES ('" +idDeportista+ "', '" +idEvento+ "', '" +idEquipo+ "', '" +edad+ "', '"+medalla+"');"
+                "`medalla`) VALUES ( %s, %s, %s, %s, %s);"
 
-    cur.execute(sentencia)
+    cur.execute(sentencia, (idDeportista, idEvento, idEquipo, edad, medalla))
     conDB.commit()
 
     # Cerramos el cursor y la base de datos

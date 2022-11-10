@@ -16,6 +16,9 @@ CREATE TABLE `Deporte` (
 	PRIMARY KEY (`id_deporte`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 DEFAULT CHARACTER SET = latin1 COLLATE = latin1_spanish_ci;
 
+INSERT INTO`Deporte` (`id_deporte`, `nombre`)
+VALUES (1, 'Basketball'), (2, 'Judo'), (3, 'Football');
+
 
 -- --------------------
 -- Tabla `Deportista`
@@ -30,6 +33,9 @@ CREATE TABLE `Deportista` (
 	PRIMARY KEY (`id_deportista`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 DEFAULT CHARACTER SET = latin1 COLLATE = latin1_spanish_ci;
 
+INSERT INTO `Deportista` ( `id_deportista`, `nombre`, `sexo`,`peso`, `altura`)
+VALUES (1, 'A Dijiang', 'M', 80, 180), (2, 'A Lamusi', 'M', 60, 170);
+
 
 -- -------------------
 -- Tabla `Equipo`
@@ -41,6 +47,9 @@ CREATE TABLE `Equipo` (
 	`iniciales` varchar(3)  NOT NULL,
 	PRIMARY KEY (`id_equipo`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 DEFAULT CHARACTER SET = latin1 COLLATE = latin1_spanish_ci;
+
+INSERT INTO `Equipo` (`id_equipo`,`nombre`,`iniciales`)
+VALUES (1, 'China', 'CHN'), (2, 'Denmark', 'DEN');
 
 
 -- --------------------
@@ -55,6 +64,11 @@ CREATE TABLE `Olimpiada` (
 	`ciudad` varchar(50)  NOT NULL ,
     PRIMARY KEY (`id_olimpiada`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 DEFAULT CHARACTER SET = latin1 COLLATE = latin1_spanish_ci;
+
+INSERT INTO `Olimpiada` ( `id_olimpiada`,`nombre`, `anio`, `temporada`,`ciudad`)
+VALUES ( 1, '1992 Summer', 1992, 'Summer','Barcelona'), 
+	( 2, '2012 Summer',2012, 'Summer', 'London'), 
+    (3,'1920 Summer', 1920, 'Summer', 'Antwerpen' );
 
 
 -- ------------------
