@@ -4,6 +4,13 @@ import csv
 import os
 
 
+def buscarEventoxOlimpiada(eventos, olimpiadaID, eventoNombre):
+    for evento in eventos:
+        if evento[0] == eventoNombre and evento[1] == olimpiadaID:
+            return True, evento[2]
+
+    return False, 0
+
 def crearBaseDatos():
     crearEstructuraBaseDatos()
     vaciarInfoScript()
@@ -38,7 +45,6 @@ def crearBaseDatosLite():
     else:
         print("El archivo CSV no existe")
 
-
 def cargarDatos(rutaDelArchivo):
     try:
         # Generamos los diccionarios
@@ -46,7 +52,7 @@ def cargarDatos(rutaDelArchivo):
         deporte = {}
         deportista = {}
         Olimpiada = {}
-        evento = {}
+        eventos = []
 
         # IDs de tablas
         deporteID = 0
@@ -70,7 +76,7 @@ def cargarDatos(rutaDelArchivo):
                         deporte[row["Sport"]] = deporteID
                         rellenarDeporte(str(deporteID), row["Sport"])
 
-                    if not row["Name"] in deporte:
+                    if not row["Name"] in deportista:
                         deportistaID += 1
                         deportista[row["Name"]] = deportistaID
 
@@ -85,22 +91,23 @@ def cargarDatos(rutaDelArchivo):
                             altura = 0;
                         else:
                             altura = row["Height"]
-
                         rellenarDeportista(str(deportistaID), row["Name"], row["Sex"], str(peso), str(altura))
 
-                    if not row["Games"] in deporte:
+                    if not row["Games"] in Olimpiada:
                         olimpiadaID += 1
                         Olimpiada[row["Games"]] = olimpiadaID
                         rellenarOlimpiada(str(olimpiadaID), row["Games"], row["Year"], row["Season"], row["City"])
 
-                    if not row["Event"] in evento:
-                        eventoID += 1
-                        evento[row["Event"]] = eventoID
+                    eventoRelacion = buscarEventoxOlimpiada(eventos, Olimpiada[row["Games"]], row["Event"])
 
+                    if not eventoRelacion[0]:
+                        eventoID += 1
+                        eventos.append([row["Event"], Olimpiada[row["Games"]], eventoID])
                         rellenarEvento(str(eventoID), str(row["Event"]), str(Olimpiada[row["Games"]]), str(deporte[row["Sport"]]))
 
-                    rellenarParticipacion(str(deportista[row["Name"]]), str(evento[row["Event"]]), str(equipo[row["Team"]]), str(row["Age"]), str(row["Medal"]))
+                    eventoRelacion = buscarEventoxOlimpiada(eventos, Olimpiada[row["Games"]], row["Event"])
 
+                    rellenarParticipacion(str(deportista[row["Name"]]), str(eventoRelacion[1]), str(equipo[row["Team"]]), str(row["Age"]), str(row["Medal"]))
         return True
 
     except:
@@ -181,48 +188,94 @@ def SelecionarSQL():
 
     while True:
         print("""
-        1. Base MySQL
-        2. Base SQLLite
+        0. Base MySQL
+        1. Base SQLLite
         """)
         sql = input("Elija una de las dos opciones con un numero")
 
-        if (sql == "1" ):
+        if (sql == "0" ):
             return True
 
-        if (sql == "2"):
+        if (sql == "1"):
             return False
 
         print("Porfavor introduzca una opcion valida")
 
 
+# Esta funcion sera usada para selecionar la id de un elemento des de una consulta SQL
+def selecionPorID(listaElementos, posicionCampoMostrar, txt):
+
+    nElemento = 0
+    # Mostraremos todos los elementos de la lista junto con un ID para su selecion
+    for e in listaElementos:
+        print(str(nElemento) + "- " + txt + ": " + e[posicionCampoMostrar])
+        nElemento += 1
+
+    # Le pedimos al usuario que elija una de las IDs, le metemos en un bucle hasta que selecione alguna correcta
+    while True:
+        eleccion = int(input("Elija la edicion olimpica usando la ID porfavor"))
+
+        if (eleccion <= len(listaElementos)):
+            idYNombre = listaElementos[eleccion]
+
+            break
+
+    # Devolvemos la id
+    return idYNombre
+
+
 def listarDeportistaEvento():
-    if (SelecionarSQL):
+    # Preguntamos al usuario si va a usar SQL (True) o SQLLite (False)
+    SQL = SelecionarSQL()
 
-        # Primero hacemos que el usuario elija la temporada
-        while True:
-            eleccion = input("elegir temporada: Summer (S) o Winter (W)").upper()
+    # Primero hacemos que el usuario elija la temporada
+    while True:
+        eleccion = input("elegir temporada: Summer (S) o Winter (W)").upper()
 
-            if eleccion == "S":
-                summer = True
-                break
+        if eleccion == "S":
+            temporada = "Summer"
+            break
 
-            if eleccion == "W":
-                summer = False
-                break
+        if eleccion == "W":
+            temporada = "Winter"
+            break
 
-        listaOlimpiadas = mostrarOlimpiadas(summer)
-
-        for e in listaOlimpiadas:
-            print(e[0] + "- " + e[1])
-
-        eleccion = input("Elija la edicion olimpica usando la ID porfavor")
-
-        while True:
-            if (eleccion >= len(listaOlimpiadas)):
-                idOlimpiada = eleccion
-
+    # Usaremos la selecionarPorID para coger las diferentes ID que necesitamos del usuario
+    if (SQL):
+        idOlimpiadaNombre = selecionPorID(listarOlimpiadasXTemporada(temporada), 1, "Nombre Olimpiada")
     else:
-        pass
+        idOlimpiadaNombre = selecionPorID(listarOlimpiadasXTemporadaLite(temporada), 1, "Nombre Olimpiada")
+
+    if (SQL):
+        idDeporteNombre = selecionPorID(listarDeporteXOlimpiada(idOlimpiadaNombre[0]), 1, "Nombre deporte")
+    else:
+        idDeporteNombre = selecionPorID(listarDeporteXOlimpiadaLite(idOlimpiadaNombre[0]), 1, "Nombre deporte")
+
+    if (SQL):
+        idEventoNombre = selecionPorID(listarEventosXOlimpiadaXDeporte(idOlimpiadaNombre[0], idDeporteNombre[0]), 1,
+                                       "Nombre evento")
+    else:
+        idEventoNombre = selecionPorID(listarEventosXOlimpiadaXDeporteLite(idOlimpiadaNombre[0], idDeporteNombre[0]), 1,
+                                       "Nombre evento")
+
+    if (SQL):
+        listaParticipantes = listarDeportistasEvento(idEventoNombre[0])
+    else:
+        listaParticipantes = listarDeportistasEventoLite(idEventoNombre[0])
+
+    for p in listaParticipantes:
+        print("""
+        Nombre: %s
+        Edad: %s
+        Altura: %s
+        Peso: %s
+        Equipo: %s
+        Medalla ganada: %s""" % (p[0], p[3], p[1], p[2], p[5], p[4]))
+
+
+def modificarMedalla():
+    # Preguntamos al usuario si va a usar SQL (True) o SQLLite (False)
+    SQL = SelecionarSQL()
 
 
 def menu():
@@ -254,7 +307,7 @@ def menu():
             pass
 
         if opcion == 4:
-            pass
+            listarDeportistaEvento()
 
         if opcion == 5:
             pass
@@ -270,5 +323,10 @@ def menu():
 
 
 if __name__ == '__main__':
-    crearBaseDatosLite()
+    vaciarInfoScript()
+    if cargarDatos("/home/dm2/repo/Python/Unidad3/athlete_eventsChiquito.csv"):
+        print("No pete")
+    else:
+        print("Si pete")
+
     pass

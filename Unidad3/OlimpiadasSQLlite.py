@@ -145,3 +145,97 @@ def rellenarParticipacionLite(idDeportista, idEvento, idEquipo, edad, medalla):
     # Cerramos el cursor y la base de datos
     cur.close()
     con.close
+
+
+def rellenarParticipacionLite(idDeportista, idEvento, idEquipo, edad, medalla):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = 'INSERT INTO "main"."Participacion"("id_deportista", "id_evento", "id_equipo", "edad", "medalla") ' \
+                'VALUES (?, ?, ?, ?, ?);'
+
+    cur.execute(sentencia, (idDeportista, idEvento, idEquipo, edad, medalla))
+    con.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+
+def listarOlimpiadasXTemporadaLite(temporada):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "SELECT * FROM Olimpiada WHERE temporada = ?;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia, (temporada,))
+
+    olimpiadas = cur.fetchall()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+    return olimpiadas
+
+
+def listarDeporteXOlimpiadaLite(idOlimpiada):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "SELECT Evento.id_deporte, Deporte.nombre FROM Evento, Deporte " \
+                "WHERE Evento.id_olimpiada = ? AND Evento.id_deporte = Deporte.id_deporte;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia, (idOlimpiada,))
+
+    deportes = cur.fetchall()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+    return deportes
+
+
+def listarEventosXOlimpiadaXDeporteLite(idOlimpiada, idDeporte):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "SELECT Evento.id_evento, Evento.nombre FROM Evento WHERE Evento.id_deporte = ? " \
+                "AND Evento.id_olimpiada = ?;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia, (idDeporte, idOlimpiada))
+
+    eventos = cur.fetchall()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+    return eventos
+
+
+def listarDeportistasEventoLite(idEvento):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "SELECT DISTINCT Deportista.nombre, Deportista.altura, Deportista.peso, Participacion.edad, " \
+                "Participacion.medalla, Equipo.nombre FROM Deportista, Participacion, " \
+                "Equipo WHERE Participacion.id_evento = ? " \
+                "AND Participacion.id_deportista = Deportista.id_deportista " \
+                "AND Participacion.id_equipo = Equipo.id_equipo;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia, (idEvento,))
+
+    participantes = cur.fetchall()
+
+    return participantes

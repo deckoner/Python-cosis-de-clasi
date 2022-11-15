@@ -152,3 +152,69 @@ def rellenarParticipacion(idDeportista, idEvento, idEquipo, edad, medalla):
     # Cerramos el cursor y la base de datos
     cur.close()
     conDB.close
+
+
+def listarOlimpiadasXTemporada(temporada):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "SELECT * FROM olimpiadaspy.Olimpiada WHERE temporada = %s;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia, (temporada,))
+
+    olimpiadas = cur.fetchall()
+
+    return olimpiadas
+
+
+def listarDeporteXOlimpiada(idOlimpiada):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "SELECT Evento.id_deporte, Deporte.nombre FROM olimpiadaspy.Evento, olimpiadaspy.Deporte " \
+                "WHERE Evento.id_olimpiada = %s AND Evento.id_deporte = Deporte.id_deporte;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia, (idOlimpiada,))
+
+    deportes = cur.fetchall()
+
+    return deportes
+
+
+def listarEventosXOlimpiadaXDeporte(idOlimpiada, idDeporte):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "SELECT Evento.id_evento, Evento.nombre FROM olimpiadaspy.Evento WHERE Evento.id_deporte = %s " \
+                "AND Evento.id_olimpiada = %s;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia, (idDeporte, idOlimpiada))
+
+    eventos = cur.fetchall()
+
+    return eventos
+
+
+def listarDeportistasEvento(idEvento):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "SELECT DISTINCT Deportista.nombre, Deportista.altura, Deportista.peso, Participacion.edad, " \
+                "Participacion.medalla, Equipo.nombre FROM olimpiadaspy.Deportista, olimpiadaspy.Participacion, " \
+                "olimpiadaspy.Equipo WHERE Participacion.id_evento = %s " \
+                "AND Participacion.id_deportista = Deportista.id_deportista " \
+                "AND Participacion.id_equipo = Equipo.id_equipo;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia, (idEvento,))
+
+    participantes = cur.fetchall()
+
+    return participantes
