@@ -279,10 +279,10 @@ def modificarMedalla(idDeportista, idEvento, medalla):
     conDB = _abrirConecxion()
     cur = conDB.cursor()
 
-    sentencia = "UPDATE Participacion SET medalla = "+medalla+" WHERE (id_deportista = "+idDeportista+") " \
-                "AND (id_evento = "+idEvento+");"
+    sentencia = "UPDATE Participacion SET medalla = %s WHERE (id_deportista = %s) " \
+                "AND (id_evento = %s);"
 
-    cur.execute(sentencia)
+    cur.execute(sentencia, (medalla, idDeportista, idEvento))
     conDB.commit()
 
     # Cerramos el cursor y la base de datos
