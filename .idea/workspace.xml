@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17cdbe19-7e71-40a6-9913-cd5e87b64676" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Examen2/Main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Examen2/sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unidad4/Deporte.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unidad4/SQLalquimistaDeAcero.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unidad4/enbebido.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Unidad3/Ejercicio1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad3/Ejercicio1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Unidad3/OlimpiadasBD.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad3/OlimpiadasBD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Unidad3/OlimpiadasSQLlite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad3/OlimpiadasSQLlite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad3/enbebido.db" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad3/enbebido.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +43,13 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dm2/repo/Python/Unidad3&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dm2/repo/Python/Unidad4&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Unidad4" />
       <recent name="$PROJECT_DIR$/Unidad3" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Unidad2" />
@@ -254,21 +261,6 @@
           <url>file://$PROJECT_DIR$/Unidad3/Ejercicio1.py</url>
           <line>100</line>
           <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Unidad3/Ejercicio1.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Unidad3/Ejercicio1.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Unidad3/Ejercicio1.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

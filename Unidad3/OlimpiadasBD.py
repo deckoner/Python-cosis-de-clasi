@@ -166,6 +166,10 @@ def listarOlimpiadasXTemporada(temporada):
 
     olimpiadas = cur.fetchall()
 
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
     return olimpiadas
 
 
@@ -182,6 +186,10 @@ def listarDeporteXOlimpiada(idOlimpiada):
 
     deportes = cur.fetchall()
 
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
     return deportes
 
 
@@ -197,6 +205,10 @@ def listarEventosXOlimpiadaXDeporte(idOlimpiada, idDeporte):
     cur.execute(sentencia, (idDeporte, idOlimpiada))
 
     eventos = cur.fetchall()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
 
     return eventos
 
@@ -217,4 +229,140 @@ def listarDeportistasEvento(idEvento):
 
     participantes = cur.fetchall()
 
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
     return participantes
+
+
+def listarDeportistas():
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "SELECT id_deportista, nombre FROM olimpiadaspy.Deportista;"
+
+    # Ejecutamos la conmsulta
+    cur.execute(sentencia)
+
+    deportistas = cur.fetchall()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
+    return deportistas
+
+
+def listarDeportistaIDDeportista(idDeportista):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "SELECT Evento.id_evento, Evento.nombre, Participacion.medalla FROM olimpiadaspy.Participacion, " \
+                "olimpiadaspy.Evento WHERE Participacion.id_evento = Evento.id_evento AND id_deportista = %s;"
+
+    cur.execute(sentencia, (idDeportista,))
+
+    eventos = cur.fetchall()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
+    return eventos
+
+
+def modificarMedalla(idDeportista, idEvento, medalla):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "UPDATE Participacion SET medalla = "+medalla+" WHERE (id_deportista = "+idDeportista+") " \
+                "AND (id_evento = "+idEvento+");"
+
+    cur.execute(sentencia)
+    conDB.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
+
+def eliminarParticipacion(idDeportista, idEvento):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "DELETE FROM `olimpiadaspy`.`Participacion` WHERE (`id_deportista` = %s) AND (`id_evento` = %s);"
+
+    cur.execute(sentencia, (idDeportista, idEvento))
+    conDB.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
+
+def eliminarDeportista(idDeportista):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "DELETE FROM `olimpiadaspy`.`Deportista` WHERE (`id_deportista` = %s);"
+
+    cur.execute(sentencia, (idDeportista,))
+    conDB.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
+def crearDeportistaUsuario(nombre, genero, peso, altura):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "INSERT INTO `olimpiadaspy`.`Deportista` (`nombre`, `sexo`, `peso`, `altura`) " \
+                "VALUES (%s, %s, %s, %s);"
+
+    cur.execute(sentencia, (nombre, genero, peso, altura))
+    conDB.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
+def listarEquipos():
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "SELECT * FROM olimpiadaspy.Equipo;"
+
+    cur.execute(sentencia)
+
+    equipos = cur.fetchall()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
+    return equipos
+
+
+def crearParticipacion(idDeportista, idEvento, idEquipo, edad, medalla):
+    # Creamos la conecxion a la base de datos y el cursor
+    conDB = _abrirConecxion()
+    cur = conDB.cursor()
+
+    sentencia = "INSERT INTO `olimpiadaspy`.`Participacion` (`id_deportista`, `id_evento`, `id_equipo`, " \
+                "`edad`, `medalla`) VALUES (%s, %s, %s, %s, %s);"
+
+    cur.execute(sentencia, (idDeportista, idEvento, idEquipo, edad, medalla))
+    conDB.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close

@@ -274,8 +274,315 @@ def listarDeportistaEvento():
 
 
 def modificarMedalla():
-    # Preguntamos al usuario si va a usar SQL (True) o SQLLite (False)
-    SQL = SelecionarSQL()
+    listaDeportistas = listarDeportistas()
+
+    nombre = input("Escribe el nombre o parte del nombre del deportista que quieras")
+
+    listaDeportistasCopy = []
+
+    for d in listaDeportistas:
+        if nombre.lower() in d[1].lower():
+            listaDeportistasCopy.append(d)
+
+    if bool(listaDeportistasCopy):
+        contadorDeportista = 0
+        for d in listaDeportistasCopy:
+            contadorDeportista +=1
+            print(str(contadorDeportista) + "- " + d[1])
+
+        # Bucle para que el usuario elija un deportista
+        while True:
+            try:
+                eleccion = int(input("Porfavor elija un deportista de la lista usando el numero"))
+
+                if eleccion <= len(listaDeportistasCopy):
+                    break
+
+            except:
+                print("Debe de introducir un numero del 1 al " + str(contadorDeportista))
+
+        listaEventos = listarDeportistaIDDeportista(listaDeportistasCopy[eleccion - 1][0])
+
+        if bool(listaEventos):
+            contadorEvento = 0
+            for e in listaEventos:
+                contadorEvento += 1
+                print(str(contadorEvento) + "- " + e[1] + " Medalla: " + e[2])
+
+            while True:
+                try:
+                    eleccionEvento = int(input("Porfavor elija un evento de la lista usando el numero"))
+
+                    if eleccionEvento <= len(listaDeportistasCopy):
+                        break
+
+                except:
+                    print("Debe de introducir un numero del 1 al " + str(contadorEvento))
+
+            while True:
+                try:
+                    print("Elije por que medalla deseas cambiarlo")
+                    print("1. Gold")
+                    print("2. Silver")
+                    print("3. bronze")
+                    print("4. N/A")
+
+                    eleccionMedalla = int(input("Porfavor elija un evento de la lista usando el numero"))
+
+                    if eleccionMedalla == 1:
+                        medalla = "Gold"
+                        break
+
+                    if eleccionMedalla == 2:
+                        medalla = "Silver"
+                        break
+
+                    if eleccionMedalla == 3:
+                        medalla = "bronze"
+                        break
+
+                    if eleccionMedalla == 4:
+                        medalla = "N/A"
+                        break
+
+                except:
+                    print("Elije una medalla mediante los numeros porfavor")
+
+            modificarMedallaLite(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0], medalla)
+            modificarMedalla(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0], medalla)
+
+            print("Se ha actualizado correctamente la participacion")
+        else:
+            print("Este deportista no tiene participaciones")
+    else:
+        print("No se encontro ningun deportista que contenga ese nombre")
+
+
+def eliminarParticipacion():
+    listaDeportistas = listarDeportistas()
+
+    nombre = input("Escribe el nombre o parte del nombre del deportista que quieras")
+
+    listaDeportistasCopy = []
+
+    for d in listaDeportistas:
+        if nombre.lower() in d[1].lower():
+            listaDeportistasCopy.append(d)
+
+    if bool(listaDeportistasCopy):
+        contadorDeportista = 0
+        for d in listaDeportistasCopy:
+            contadorDeportista +=1
+            print(str(contadorDeportista) + "- " + d[1])
+
+        # Bucle para que el usuario elija un deportista
+        while True:
+            try:
+                eleccion = int(input("Porfavor elija un deportista de la lista usando el numero"))
+
+                if eleccion <= len(listaDeportistasCopy):
+                    break
+
+            except:
+                print("Debe de introducir un numero del 1 al " + str(contadorDeportista))
+
+        listaEventos = listarDeportistaIDDeportista(listaDeportistasCopy[eleccion - 1][0])
+
+        if bool(listaEventos):
+            contadorEvento = 0
+            for e in listaEventos:
+                contadorEvento += 1
+                print(str(contadorEvento) + "- " + e[1] + " Medalla: " + e[2])
+
+            while True:
+                try:
+                    eleccionEvento = int(input("Porfavor elija un evento de la lista usando el numero"))
+
+                    if eleccionEvento <= len(listaDeportistasCopy):
+                        break
+
+                except:
+                    print("Debe de introducir un numero del 1 al " + str(contadorEvento))
+
+            if len(listaEventos) == 1:
+                eliminarParticipacion(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
+                eliminarParticipacionLite(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
+
+                eliminarDeportista(listaDeportistasCopy[eleccion - 1][0])
+                eliminarDeportistaLite(listaDeportistasCopy[eleccion - 1][0])
+
+                print("Se ha eliminado la participacion y el deportista ya que no poesia mas participaciones")
+            else:
+                eliminarParticipacion(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
+                eliminarParticipacionLite(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
+
+                print("Se ha eliminado la participacion")
+        else:
+            print("Este deportista no tiene participaciones")
+    else:
+        print("No se encontro ningun deportista que contenga ese nombre")
+
+
+def anadirParticipacionODeportista():
+    listaDeportistas = listarDeportistas()
+
+    nombre = input("Escribe el nombre o parte del nombre del deportista que quieras")
+
+    listaDeportistasCopy = []
+
+    for d in listaDeportistas:
+        if nombre.lower() in d[1].lower():
+            listaDeportistasCopy.append(d)
+
+    if bool(listaDeportistasCopy):
+        contadorDeportista = 0
+        for d in listaDeportistasCopy:
+            contadorDeportista +=1
+            print(str(contadorDeportista) + "- " + d[1])
+
+        # Bucle para que el usuario elija un deportista
+        while True:
+            try:
+                eleccion = int(input("Porfavor elija un deportista de la lista usando el numero"))
+
+                if eleccion <= len(listaDeportistasCopy):
+                    idDeportista = listaDeportistasCopy[eleccion][0]
+                    break
+
+            except:
+                print("Debe de introducir un numero del 1 al " + str(contadorDeportista))
+    else:
+        nombre = crearDeportista()
+
+        idDeportista = DeportistaPorNombreLite(nombre)[0]
+
+    while True:
+        eleccion = input("elegir temporada: Summer (S) o Winter (W)").upper()
+
+        if eleccion == "S":
+            temporada = "Summer"
+            break
+
+        if eleccion == "W":
+            temporada = "Winter"
+            break
+
+    idOlimpiadaNombre = selecionPorID(listarOlimpiadasXTemporada(temporada), 1, "Nombre Olimpiada")
+    idDeporteNombre = selecionPorID(listarDeporteXOlimpiada(idOlimpiadaNombre[0]), 1, "Nombre deporte")
+    idEventoNombre = selecionPorID(listarEventosXOlimpiadaXDeporte(idOlimpiadaNombre[0], idDeporteNombre[0]), 1,
+                                   "Nombre evento")
+
+    listaEquipos = listarEquipos()
+
+    contadorEquipo = 0
+    for e in listaEquipos:
+        contadorEquipo += 1
+        print(contadorEquipo + "- " + e[1])
+
+    while True:
+        try:
+            elecionEquipo = int(input("Seleciona uno de los equipos con el numero"))
+
+            if elecionEquipo <= len(listaEquipos):
+                idEquipo = listaEquipos[elecionEquipo][0]
+                break
+
+        except:
+            print("Porfavor indicalo con un numero")
+
+    while True:
+        try:
+            edad = int(input("Introduce la edad que tenia el deportista en su participacion"))
+            break
+
+        except:
+            print("Porfavor usa un numero")
+
+    while True:
+        try:
+            print("Elije por que medalla deseas cambiarlo")
+            print("1. Gold")
+            print("2. Silver")
+            print("3. bronze")
+            print("4. N/A")
+
+            eleccionMedalla = int(input("Porfavor elija un evento de la lista usando el numero"))
+
+            if eleccionMedalla == 1:
+                medalla = "Gold"
+                break
+
+            if eleccionMedalla == 2:
+                medalla = "Silver"
+                break
+
+            if eleccionMedalla == 3:
+                medalla = "bronze"
+                break
+
+            if eleccionMedalla == 4:
+                medalla = "N/A"
+                break
+
+        except:
+            print("Elije una medalla mediante los numeros porfavor")
+
+    crearParticipacionLite(idDeportista[0], idEventoNombre[0], idEquipo, edad, medalla)
+    crearParticipacion(idDeportista[0], idEventoNombre[0], idEquipo, edad, medalla)
+
+
+def crearDeportista():
+    nombre = input("Nombre del deportista")
+
+    while True:
+        print("Elije el genero del Deportista")
+        print("1. Masculino")
+        print("2. Femenino")
+        try:
+            elecionGenero = int(input())
+
+            if elecionGenero == 1:
+                genero = "M"
+                break
+
+            if elecionGenero == 2:
+                genero = "F"
+                break
+        except:
+            print("Elije uno del os dos generos con el numero correspondiente porfavor")
+
+    while True:
+        try:
+            peso = input("Introduce el peso del deportista, si no se escribe nada se tomara como 0")
+
+            if peso == "":
+                peso = 0
+                break
+            else:
+                int(peso)
+                break
+        except:
+            print("Porfavor usa un numero o deja vacio el campo")
+
+    while True:
+        try:
+            altura = input("Introduce el altura del deportista, si no se escribe nada se tomara como 0")
+
+            if altura == "":
+                altura = 0
+                break
+            else:
+                int(altura)
+                break
+        except:
+            print("Porfavor usa un numero o deja vacio el campo")
+
+    crearDeportistaUsuario(nombre, genero, peso, altura)
+    crearDeportistaUsuarioLite(nombre, genero, peso, altura)
+
+    print("Se ha creado el deportista " + nombre)
+
+    return nombre
 
 
 def menu():
@@ -310,23 +617,17 @@ def menu():
             listarDeportistaEvento()
 
         if opcion == 5:
-            pass
+            modificarMedalla()
 
         if opcion == 6:
-            pass
+            anadirParticipacionODeportista()
 
         if opcion == 7:
-            pass
+            eliminarParticipacion()
 
         if opcion == 0:
             finalizar = False
 
 
 if __name__ == '__main__':
-    vaciarInfoScript()
-    if cargarDatos("/home/dm2/repo/Python/Unidad3/athlete_eventsChiquito.csv"):
-        print("No pete")
-    else:
-        print("Si pete")
-
-    pass
+    modificarMedalla()

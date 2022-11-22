@@ -238,4 +238,104 @@ def listarDeportistasEventoLite(idEvento):
 
     participantes = cur.fetchall()
 
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    conDB.close
+
     return participantes
+
+
+def modificarMedallaLite(idDeportista, idEvento, medalla):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "UPDATE `Participacion` SET `medalla` = ? " \
+                "WHERE (`id_deportista` = ?) and (`id_evento` = ?);"
+
+    cur.execute(sentencia, (medalla, idDeportista, idEvento))
+    con.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+
+def eliminarParticipacionLite(idDeportista, idEvento):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "DELETE FROM `Participacion` WHERE (`id_deportista` = ?) AND (`id_evento` = ?);"
+
+    cur.execute(sentencia, (idDeportista, idEvento))
+    con.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+
+def eliminarDeportistaLite(idDeportista):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "DELETE FROM `Deportista` WHERE (`id_deportista` = ?);"
+
+    cur.execute(sentencia, (idDeportista,))
+    con.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+
+def crearDeportistaUsuarioLite(nombre, genero, peso, altura):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "INSERT INTO `Deportista` (`nombre`, `sexo`, `peso`, `altura`) " \
+                "VALUES (?, ?, ?, ?);"
+
+    cur.execute(sentencia, (nombre, genero, peso, altura))
+    con.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+
+def DeportistaPorNombreLite(nombre):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "SELECT * FROM Deportista WHERE nombre = ?;"
+
+    cur.execute(sentencia, (nombre,))
+
+    deportista = cur.fetchall()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
+
+    return deportista
+
+
+def crearParticipacionLite(idDeportista, idEvento, idEquipo, edad, medalla):
+    # Creamos la conecxion a la base de datos y el cursor
+    con = _abrirConecxion()
+    cur = con.cursor()
+
+    sentencia = "INSERT INTO `Participacion` (`id_deportista`, `id_evento`, `id_equipo`, " \
+                "`edad`, `medalla`) VALUES (?, ?, ?, ?, ?);"
+
+    cur.execute(sentencia, (idDeportista, idEvento, idEquipo, edad, medalla))
+    con.commit()
+
+    # Cerramos el cursor y la base de datos
+    cur.close()
+    con.close
