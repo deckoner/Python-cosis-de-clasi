@@ -274,7 +274,7 @@ def listarDeportistaIDDeportista(idDeportista):
     return eventos
 
 
-def modificarMedalla(idDeportista, idEvento, medalla):
+def modificarMedallaDB(idDeportista, idEvento, medalla):
     # Creamos la conecxion a la base de datos y el cursor
     conDB = _abrirConecxion()
     cur = conDB.cursor()
@@ -290,7 +290,7 @@ def modificarMedalla(idDeportista, idEvento, medalla):
     conDB.close
 
 
-def eliminarParticipacion(idDeportista, idEvento):
+def eliminarParticipacionDB(idDeportista, idEvento):
     # Creamos la conecxion a la base de datos y el cursor
     conDB = _abrirConecxion()
     cur = conDB.cursor()
@@ -305,7 +305,7 @@ def eliminarParticipacion(idDeportista, idEvento):
     conDB.close
 
 
-def eliminarDeportista(idDeportista):
+def eliminarDeportistaDB(idDeportista):
     # Creamos la conecxion a la base de datos y el cursor
     conDB = _abrirConecxion()
     cur = conDB.cursor()
@@ -319,7 +319,7 @@ def eliminarDeportista(idDeportista):
     cur.close()
     conDB.close
 
-def crearDeportistaUsuario(nombre, genero, peso, altura):
+def crearDeportistaUsuarioDB(nombre, genero, peso, altura):
     # Creamos la conecxion a la base de datos y el cursor
     conDB = _abrirConecxion()
     cur = conDB.cursor()
@@ -334,7 +334,7 @@ def crearDeportistaUsuario(nombre, genero, peso, altura):
     cur.close()
     conDB.close
 
-def listarEquipos():
+def listarEquiposDB():
     # Creamos la conecxion a la base de datos y el cursor
     conDB = _abrirConecxion()
     cur = conDB.cursor()
@@ -352,7 +352,7 @@ def listarEquipos():
     return equipos
 
 
-def crearParticipacion(idDeportista, idEvento, idEquipo, edad, medalla):
+def crearParticipacionDB(idDeportista, idEvento, idEquipo, edad, medalla):
     # Creamos la conecxion a la base de datos y el cursor
     conDB = _abrirConecxion()
     cur = conDB.cursor()

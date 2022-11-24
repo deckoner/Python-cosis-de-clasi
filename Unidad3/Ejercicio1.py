@@ -349,7 +349,7 @@ def modificarMedalla():
                     print("Elije una medalla mediante los numeros porfavor")
 
             modificarMedallaLite(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0], medalla)
-            modificarMedalla(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0], medalla)
+            modificarMedallaDB(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0], medalla)
 
             print("Se ha actualizado correctamente la participacion")
         else:
@@ -405,15 +405,15 @@ def eliminarParticipacion():
                     print("Debe de introducir un numero del 1 al " + str(contadorEvento))
 
             if len(listaEventos) == 1:
-                eliminarParticipacion(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
+                eliminarParticipacionDB(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
                 eliminarParticipacionLite(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
 
-                eliminarDeportista(listaDeportistasCopy[eleccion - 1][0])
+                eliminarDeportistaDB(listaDeportistasCopy[eleccion - 1][0])
                 eliminarDeportistaLite(listaDeportistasCopy[eleccion - 1][0])
 
                 print("Se ha eliminado la participacion y el deportista ya que no poesia mas participaciones")
             else:
-                eliminarParticipacion(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
+                eliminarParticipacionDB(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
                 eliminarParticipacionLite(listaDeportistasCopy[eleccion - 1][0], listaEventos[eleccionEvento - 1][0])
 
                 print("Se ha eliminado la participacion")
@@ -446,7 +446,8 @@ def anadirParticipacionODeportista():
                 eleccion = int(input("Porfavor elija un deportista de la lista usando el numero"))
 
                 if eleccion <= len(listaDeportistasCopy):
-                    idDeportista = listaDeportistasCopy[eleccion][0]
+                    print("entro en el if")
+                    idDeportista = listaDeportistasCopy[eleccion - 1][0]
                     break
 
             except:
@@ -472,19 +473,19 @@ def anadirParticipacionODeportista():
     idEventoNombre = selecionPorID(listarEventosXOlimpiadaXDeporte(idOlimpiadaNombre[0], idDeporteNombre[0]), 1,
                                    "Nombre evento")
 
-    listaEquipos = listarEquipos()
+    listaEquipos = listarEquiposDB()
 
     contadorEquipo = 0
     for e in listaEquipos:
         contadorEquipo += 1
-        print(contadorEquipo + "- " + e[1])
+        print(contadorEquipo, "- ", e[1])
 
     while True:
         try:
             elecionEquipo = int(input("Seleciona uno de los equipos con el numero"))
 
             if elecionEquipo <= len(listaEquipos):
-                idEquipo = listaEquipos[elecionEquipo][0]
+                idEquipo = listaEquipos[elecionEquipo - 1][0]
                 break
 
         except:
@@ -527,8 +528,8 @@ def anadirParticipacionODeportista():
         except:
             print("Elije una medalla mediante los numeros porfavor")
 
-    crearParticipacionLite(idDeportista[0], idEventoNombre[0], idEquipo, edad, medalla)
-    crearParticipacion(idDeportista[0], idEventoNombre[0], idEquipo, edad, medalla)
+    crearParticipacionLite(str(idDeportista[0]), str(idEventoNombre[0]), str(idEquipo), str(edad), str(medalla))
+    crearParticipacionDB(idDeportista[0], idEventoNombre[0], idEquipo, edad, medalla)
 
 
 def crearDeportista():
@@ -577,7 +578,7 @@ def crearDeportista():
         except:
             print("Porfavor usa un numero o deja vacio el campo")
 
-    crearDeportistaUsuario(nombre, genero, peso, altura)
+    crearDeportistaUsuarioDB(nombre, genero, peso, altura)
     crearDeportistaUsuarioLite(nombre, genero, peso, altura)
 
     print("Se ha creado el deportista " + nombre)
@@ -617,17 +618,17 @@ def menu():
             listarDeportistaEvento()
 
         if opcion == 5:
-            modificarMedalla()
+            modificarMedallaDB()
 
         if opcion == 6:
             anadirParticipacionODeportista()
 
         if opcion == 7:
-            eliminarParticipacion()
+            eliminarParticipacionDB()
 
         if opcion == 0:
             finalizar = False
 
 
 if __name__ == '__main__':
-    modificarMedalla()
+    anadirParticipacionODeportista()
