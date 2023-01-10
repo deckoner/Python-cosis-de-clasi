@@ -11,6 +11,7 @@ def buscarEventoxOlimpiada(eventos, olimpiadaID, eventoNombre):
 
     return False, 0
 
+
 def crearBaseDatos():
     crearEstructuraBaseDatos()
     vaciarInfoScript()
@@ -44,6 +45,7 @@ def crearBaseDatosLite():
 
     else:
         print("El archivo CSV no existe")
+
 
 def cargarDatos(rutaDelArchivo):
     try:
@@ -631,4 +633,4 @@ def menu():
 
 
 if __name__ == '__main__':
-    anadirParticipacionODeportista()
+    menu()
