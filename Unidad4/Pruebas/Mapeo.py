@@ -14,9 +14,7 @@ class Nota(Base):
     id_alumno = Column(Integer, ForeignKey('Alumno.id_alumno'))
     modulo = Column(String)
     nota = Column(Integer)
-    alumno = relationship(Alumno, back_populates='notas')
+    alumno = relationship("Alumno", back_populates='notas')
 
-Alumno.notas = relationship(Nota, back_populates=Alumno)
-engine = create_engine("sqlite:///endebido.db", echo=True)
-Base.metadata.create_all(engine)
+Alumno.notas = relationship("Nota", back_populates="alumno")
 

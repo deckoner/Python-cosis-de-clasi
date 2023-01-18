@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from Unidad4.Pruebas.Mapeo import Alumno, Nota
 
 engine = create_engine("sqlite:///endebido.db", echo=True)
 Session = sessionmaker(bind=engine)

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="estate_property_action" model="ir.actions.act_window">
+        <field name="name">estate.property.action</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- LA PROPIEDAD EN VISTA DE ARBOL Y TAL ;-;-->
+    <record id="estate_property_action_view_tree" model="ir.ui.view">
+        <field name="name">estate.property.tree</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="name"/>
+                <field name="postcode"/>
+                <field name="bedrooms"/>
+                <field name="livingArea"/>
+                <field name="expectedPrice"/>
+                <field name="sellingPrice"/>
+                <field name="dateAvailability"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="crm_lost_reason_view_form" model="ir.ui.view">
+        <field name="name">crm.lost.reason.form</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form string="Lost Reason">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="postcode"/>
+                            <field name="expectedPrice"/>
+                        </group>
+                        <group>
+                            <field name="dateAvailability"/>
+                            <field name="sellingPrice"/>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                                <field name="bedrooms"/>
+                                <field name="livingArea"/>
+                                <field name="facades"/>
+                                <field name="garage"/>
+                                <field name="garden"/>
+                                <field name="gardenArea"/>
+                                <field name="garden_orientation"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

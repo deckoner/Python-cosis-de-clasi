@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17cdbe19-7e71-40a6-9913-cd5e87b64676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Unidad4/Model/Mapeo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Unidad4/Prueba.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Unidad4/Pruebas/Conecxion.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Unidad4/Pruebas/Mapeo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unidad4/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unidad3/Ejercicio1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad3/Ejercicio1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unidad3/enbebido.db" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad3/enbebido.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unidad4/Deporte.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad4/Model/Mapeo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad4/Model/Mapeo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad4/Prueba.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad4/Pruebas/Conecxion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad4/Pruebas/Conecxion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad4/Pruebas/Mapeo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad4/Pruebas/Mapeo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Unidad4/SQLalquimistaDeAcero.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad4/SQLalquimistaDeAcero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +42,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/dm2/repo/Python&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -63,7 +60,7 @@
       <recent name="D:\repo\Python\Unidad2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Ejercicio3">
+  <component name="RunManager">
     <configuration name="Ejercicio3" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />

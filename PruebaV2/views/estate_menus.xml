@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="estate_property_menu_root" name="estate property 2: Ahora es personal">
+        <menuitem id="estate_property_first_level_menu" name="Primerito nivel">
+            <menuitem id="estate_property_menu_action" action="estate_property_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

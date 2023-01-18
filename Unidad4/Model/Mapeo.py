@@ -1,9 +1,10 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
+# Mapeo general
 class Deporte(Base):
     __tablename__ = 'Deporte'
     id_deporte = Column(Integer, primary_key=True)
@@ -26,14 +27,6 @@ class Equipo(Base):
     iniciales = Column(String)
 
 
-class Evento(Base):
-    __tablename__ = 'Evento'
-    id_evento = Column(Integer, primary_key=True)
-    nombre = Column(String)
-    id_olimpiada = Column(Integer, ForeignKey('Olimpiada.id'))
-    id_deporte = Column(String, ForeignKey('Deporte.id'))
-
-
 class Olimpiada(Base):
     __tablename__ = 'Olimpiada'
     id_olimpiada = Column(Integer, primary_key=True)
@@ -43,10 +36,33 @@ class Olimpiada(Base):
     ciudad = Column(String)
 
 
+class Evento(Base):
+    __tablename__ = 'Evento'
+    id_evento = Column(Integer, primary_key=True)
+    nombre = Column(String)
+    id_olimpiada = Column(Integer, ForeignKey('Olimpiada.id_olimpiada'))
+    id_deporte = Column(String, ForeignKey('Deporte.id_deporte'))
+    deporte = relationship("Deporte", back_populates='eventos')
+    olimpiada = relationship("Olimpiada", back_populates='eventos')
+
+
 class Participacion(Base):
     __tablename__ = 'Participacion'
-    id_deportista = Column(Integer, ForeignKey('deportista.id'), primary_key=True)
-    id_evento = Column(Integer, ForeignKey('evento.id'))
-    id_equipo = Column(Integer, ForeignKey('equipo.id'))
+    id_deportista = Column(Integer, ForeignKey('Deportista.id_deportista'), primary_key=True)
+    id_evento = Column(Integer, ForeignKey('Evento.id_evento'))
+    id_equipo = Column(Integer, ForeignKey('Equipo.id_equipo'))
     edad = Column(Integer)
     medalla = Column(String)
+    deportista = relationship("Deportista", back_populates='participaciones')
+    evento = relationship("Evento", back_populates='participaciones')
+    equipo =  relationship("Equipo", back_populates='participaciones')
+
+
+# Relaciones
+Deporte.eventos = relationship("Evento", back_populates="deporte")
+Olimpiada.eventos = relationship("Evento", back_populates="olimpiada")
+
+Deportista.participaciones = relationship("Participacion", back_populates="deportista")
+Evento.participaciones = relationship("Participacion", back_populates="evento")
+Equipo.participaciones = relationship("Participacion", back_populates="equipo")
+
