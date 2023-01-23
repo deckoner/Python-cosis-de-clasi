@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="17cdbe19-7e71-40a6-9913-cd5e87b64676" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/Unidad4/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -13,6 +14,9 @@
       <change beforePath="$PROJECT_DIR$/Unidad4/Pruebas/Mapeo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad4/Pruebas/Mapeo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Unidad4/SQLalquimistaDeAcero.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad4/SQLalquimistaDeAcero.py" afterDir="false" />
     </list>
+=======
+    <list default="true" id="17cdbe19-7e71-40a6-9913-cd5e87b64676" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,8 +45,13 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< Updated upstream
     &quot;last_opened_file_path&quot;: &quot;/home/dm2/repo/Python&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+=======
+    &quot;last_opened_file_path&quot;: &quot;D:/repo/Python&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+>>>>>>> Stashed changes
   }
 }</component>
   <component name="RecentsManager">
