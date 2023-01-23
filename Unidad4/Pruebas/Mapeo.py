@@ -2,7 +2,7 @@ from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy import Column, Integer, String, ForeignKey, create_engine
 
 # Crea un motor de base de datos específico para SQLite
-DATABASE_URL = "sqlite:///./alumnos.db"
+DATABASE_URL = "sqlite:///alumnos.db"
 engine = create_engine(DATABASE_URL)
 
 # Crea un objeto Base para declarar las entidades de la base de datos
