@@ -1,10 +1,4 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-
-engine = create_engine("sqlite:///endebido.db", echo=True)
-Session = sessionmaker(bind=engine)
-session = Session()
-session.execute('pragma foreign_Keys=on')
+from Unidad4.Pruebas.Mapeo import list_alumnos_notas
 
 # Añadir alumno
 # a = Alumno(nombre="Mikel")
@@ -22,3 +16,5 @@ session.execute('pragma foreign_Keys=on')
 # session.delete(n)
 # session.commit()
 # session.close()
+
+list_alumnos_notas()

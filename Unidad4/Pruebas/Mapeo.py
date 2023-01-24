@@ -1,4 +1,4 @@
-from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.orm import declarative_base, relationship, sessionmaker, joinedload
 from sqlalchemy import Column, Integer, String, ForeignKey, create_engine
 
 # Crea un motor de base de datos específico para SQLite
@@ -65,7 +65,7 @@ def list_alumnos_notas():
     for alumno in alumnos:
         print(alumno.nombre)
         for nota in alumno.notas:
-        print(f'{nota.modulo} - {nota.nota}')
+            print(f'{nota.modulo} - {nota.nota}')
     db.close()
 
 # Función para listar todas las notas de un alumno dado su id
