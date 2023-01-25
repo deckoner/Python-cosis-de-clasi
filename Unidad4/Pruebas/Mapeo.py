@@ -1,5 +1,6 @@
-from sqlalchemy.orm import declarative_base, relationship, sessionmaker, joinedload
 from sqlalchemy import Column, Integer, String, ForeignKey, create_engine
+from sqlalchemy.orm import relationship, sessionmaker, joinedload
+from sqlalchemy.ext.declarative import declarative_base
 
 # Crea un motor de base de datos específico para SQLite
 DATABASE_URL = "sqlite:///alumnos.db"
@@ -8,19 +9,22 @@ engine = create_engine(DATABASE_URL)
 # Crea un objeto Base para declarar las entidades de la base de datos
 Base = declarative_base()
 
+
 class Alumno(Base):
     __tablename__ = 'alumno'
-    id = Column(Integer, primary_key=True)
+    id_alumno = Column(Integer, primary_key=True)
     nombre = Column(String)
     notas = relationship("Nota", back_populates="alumno")
 
+
 class Nota(Base):
     __tablename__ = 'nota'
-    id = Column(Integer, primary_key=True)
-    alumno_id = Column(Integer, ForeignKey('alumno.id'))
+    id_nota = Column(Integer, primary_key=True)
+    id_alumno = Column(Integer, ForeignKey('alumno.id_alumno'))
     modulo = Column(String)
     nota = Column(Integer)
     alumno = relationship("Alumno", back_populates='notas')
+
  
 # Crea un objeto session para interactuar con la base de datos
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
