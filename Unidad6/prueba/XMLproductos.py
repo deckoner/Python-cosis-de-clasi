@@ -1,7 +1,5 @@
 from pyexistdb import db, patch
-# patch.request_patching(patch.XMLRpcLibPatch )
-conexion = db.ExistDB("http://admin:password@localhost:8080/exist/")
-# conexion.removeCollection("almacen")
+conexion = db.ExistDB("http://admin:admin@localhost:8080/exist/")
 if conexion.hasCollection("almacen"):
     print("La coleccion ya existe")
 else:
@@ -10,7 +8,7 @@ else:
 with open ("productos.xml", encoding="ISO-8859-1") as f:
     xml = f.read()
     print(xml)
-conexion.load(xml, "almacen/productos")
+conexion.load(xml, "almacen/productos.xml")
 query = """for $producto in /productos/produc  
             where  $producto/stock_minimo < $producto/stock_actual
             return <produc>

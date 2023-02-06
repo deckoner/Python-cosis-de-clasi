@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <productos>
 <TITULO>DATOS DE LA TABLA PRODUCTOS</TITULO>
-<produc>
+    <produc>
     <cod_prod>1010</cod_prod>
     <denominacion>Placa Base MSI G41M-P26</denominacion>
     <precio>50</precio>

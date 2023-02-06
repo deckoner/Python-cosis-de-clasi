@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_instituto_alumno,access_instituto_alumno,model_instituto_alumno,base.group_user,1,1,1,1
+access_instituto_empresa,access_instituto_empresa,model_instituto_empresa,base.group_user,1,1,1,1
+access_instituto_practicas,access_instituto_practicas,model_instituto_practicas,base.group_user,1,1,1,1

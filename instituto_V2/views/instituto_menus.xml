@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="instituto_alumno_menu_root" name="Brian Escobar Rubio">
+        <menuitem id="instituto_alumno_first_level_menu" name="Instituto">
+            <menuitem id="instituto_alumno_menu_action" action="instituto_alumno_action" name="Alumnos"/>
+            <menuitem id="instituto_empresa_menu_action" action="instituto_empresa_action" name="Empresas"/>
+        </menuitem>
+    </menuitem>
+</odoo>

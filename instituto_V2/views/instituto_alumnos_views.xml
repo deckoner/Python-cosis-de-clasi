@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="instituto_alumno_action" model="ir.actions.act_window">
+        <field name="name">Alumnos</field>
+        <field name="res_model">instituto.alumno</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- EL ALUMNO EN VISTA DE ARBOL Y TAL ;-;-->
+    <record id="instituto_alumno_action_view_tree" model="ir.ui.view">
+        <field name="name">instituto.alumno.tree</field>
+        <field name="model">instituto.alumno</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="name"/>
+                <field name="apellidos"/>
+                <field name="notaMedia"/>
+                <field name="email"/>
+                <field name="fechaNacimiento"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- LA VISTA PARA EL FORMULARIO -->
+    <record id="instituto_alumno_action_view_form" model="ir.ui.view">
+        <field name="name">instituto.alumno.form</field>
+        <field name="model">instituto.alumno</field>
+        <field name="arch" type="xml">
+            <form string="Lost Reason">
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="apellidos"/>
+                            <field name="fechaNacimiento"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="direccion"/>
+                            <field name="codPostal"/>
+                            <field name="coche"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Informacion academica">
+                            <group>
+                                <field name="cicloFormativo"/>
+                                <field name="notaMedia"/>
+                                <field name="notaString"/>
+                                <field name="empresa"/>
+                            </group>
+                        </page>
+                        <page string="Otros">
+                            <group>
+                                <field name="otros"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- LA BUSQUEDA Y FILTROS-->
+    <record id="instituto_alumno_action_view_search" model="ir.ui.view">
+        <field name="name">instituto.alumno.search</field>
+        <field name="model">instituto.alumno</field>
+        <field name="arch" type="xml">
+            <search string="Busqueda Por">
+                <field name="name"/>
+                <field name="apellidos"/>  
+            </search>
+        </field>
+    </record>
+
+    <!-- LA VISTA EN ARBOL PARA LA EMPRESA-->
+    <record id="instituto_alumno_offer_action_view_tree" model="ir.ui.view">
+        <field name="name">instituto.alumno.tree</field>
+        <field name="model">instituto.alumno</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="name"/>
+                <field name="apellidos"/>
+                <field name="email"/>
+                <field name="notaMedia"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

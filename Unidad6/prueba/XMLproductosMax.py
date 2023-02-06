@@ -1,6 +1,6 @@
 from pyexistdb import db, patch
 # patch.request_patching(patch.XMLRpcLibPatch )
-conexion = db.ExistDB("http://admin:password@localhost:8080/exist/")
+conexion = db.ExistDB("http://admin:admin@localhost:8080/exist/")
 # conexion.removeCollection("almacen")
 if conexion.hasCollection("almacen"):
     print("La coleccion ya existe")
